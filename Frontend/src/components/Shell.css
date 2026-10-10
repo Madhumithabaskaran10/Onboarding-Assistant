@@ -1,0 +1,34 @@
+.shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+
+.side {
+  position: sticky; top: 0; height: 100vh;
+  display: flex; flex-direction: column;
+  padding: 24px 16px;
+  background: var(--ink); color: #fff;
+}
+.side-brand { margin: 0 8px; font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; }
+.side-role { margin: 2px 8px 22px; color: #aab6cf; font-size: 0.9rem; }
+
+.side nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.side nav a {
+  padding: 10px 12px; border-radius: 8px;
+  border-left: 4px solid transparent;
+  color: #dbe3f3; text-decoration: none;
+}
+.side nav a:hover { background: rgba(255, 255, 255, 0.08); }
+.side nav a.active { background: rgba(255, 255, 255, 0.12); color: #fff; border-left-color: #fff; }
+
+.side-out {
+  height: 40px; border-radius: 8px; cursor: pointer;
+  background: none; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.content { width: 100%; max-width: 960px; padding: 32px clamp(16px, 4vw, 48px); }
+
+@media (max-width: 760px) {
+  .shell { grid-template-columns: 1fr; }
+  .side { position: static; height: auto; }
+  .side nav { flex-direction: row; overflow-x: auto; margin-bottom: 14px; }
+  .side nav a { white-space: nowrap; border-left: 0; border-bottom: 3px solid transparent; }
+  .side nav a.active { border-bottom-color: #fff; }
+}

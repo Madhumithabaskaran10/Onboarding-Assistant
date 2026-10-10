@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Public+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --ink: #14213d;
+  --mist: #edf1f7;
+  --paper: #ffffff;
+  --action: #2b59d9;
+  --lanyard: #f5b82e;
+  --ok: #1f8a5b;
+  --warn: #b86e00;
+  --bad: #c0392b;
+  --line: #d5dce8;
+  --muted: #5b6780;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--mist);
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; margin: 0; }
+button, input, select, textarea { font: inherit; }
+:focus-visible { outline: 3px solid var(--action); outline-offset: 2px; }
+
+.status {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: 0.82rem; font-weight: 600; white-space: nowrap;
+}
+.status.ok { background: #e1f3ea; color: #176b47; }
+.status.warn { background: #fbefd9; color: #8a5200; }
+.status.bad { background: #fbeceb; color: #a22d22; }
+.status.muted { background: #e6eaf2; color: #4a5670; }

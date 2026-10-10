@@ -1,0 +1,55 @@
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.panel {
+  margin-bottom: 36px; padding: 20px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+}
+.panel h2 { font-size: 1.25rem; margin-bottom: 14px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.field > label, .field > legend { font-weight: 600; font-size: 0.9rem; }
+.field select, .field textarea, .field input[type="file"] {
+  padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px;
+  background: #fff; color: var(--ink);
+}
+.field select { height: 44px; }
+.field textarea { min-height: 96px; resize: vertical; }
+.help { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+.check { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.check input { width: 18px; height: 18px; }
+
+.primary {
+  height: 46px; padding: 0 24px; border: 0; border-radius: 8px; cursor: pointer;
+  background: var(--action); color: #fff; font-weight: 600;
+}
+.primary:disabled { opacity: 0.6; cursor: wait; }
+
+.success-box {
+  margin: 0 0 16px; padding: 10px 12px;
+  border-left: 4px solid var(--ok); background: #e1f3ea; color: #176b47;
+}
+
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rows li { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.row-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.rows p { margin: 6px 0 0; overflow-wrap: anywhere; }
+.rows .muted { color: var(--muted); font-size: 0.9rem; }
+
+.stars { border: 0; padding: 0; margin: 0 0 16px; }
+.stars legend { padding: 0; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
+.stars-row { display: flex; gap: 2px; }
+.stars-row label { padding: 0 4px; border-radius: 6px; font-size: 2rem; line-height: 1.2; cursor: pointer; color: var(--muted); }
+.stars-row label.on { color: var(--action); }
+.stars-row input:focus-visible + label { outline: 3px solid var(--action); outline-offset: 2px; }
+
+.avg { margin: 0 0 12px; color: var(--muted); }
+
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .row-head { flex-direction: column; gap: 8px; }
+}

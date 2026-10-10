@@ -1,0 +1,62 @@
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.chat-log {
+  display: flex; flex-direction: column; gap: 16px;
+  height: min(58vh, 520px); overflow-y: auto;
+  padding: 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.chat-empty { margin: auto; text-align: center; max-width: 440px; color: var(--muted); }
+.suggestions { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.suggestions button {
+  padding: 10px 14px; border-radius: 8px; cursor: pointer; text-align: left;
+  border: 1px solid var(--line); background: var(--mist); color: var(--ink);
+}
+.suggestions button:hover { border-color: var(--action); }
+
+.msg { display: flex; flex-direction: column; max-width: 82%; }
+.msg.me { align-self: flex-end; align-items: flex-end; }
+.msg.bot { align-self: flex-start; }
+.bubble { margin: 0; padding: 10px 14px; border-radius: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg.me .bubble { background: var(--action); color: #fff; border-bottom-right-radius: 4px; }
+.msg.bot .bubble { background: var(--mist); border-bottom-left-radius: 4px; }
+
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 6px; }
+.sources { color: var(--muted); font-size: 0.85rem; }
+
+.notice {
+  margin: 8px 0 0; padding: 8px 12px;
+  border-left: 4px solid var(--warn); background: #fbefd9; color: #6b4000;
+  font-size: 0.9rem;
+}
+
+.thinking { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+.chat-form { display: flex; gap: 10px; margin: 14px 0 0; }
+.chat-form input {
+  flex: 1; height: 46px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink);
+}
+.chat-form button {
+  height: 46px; padding: 0 22px; border: 0; border-radius: 8px; cursor: pointer;
+  background: var(--action); color: #fff; font-weight: 600;
+}
+.chat-form button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.hr-replies { margin-top: 40px; }
+.reply-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.reply-list li { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.reply-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.reply-list p { margin: 8px 0 0; }
+.reply-list .muted { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 560px) {
+  .msg { max-width: 94%; }
+  .reply-head { flex-direction: column; gap: 8px; }
+}

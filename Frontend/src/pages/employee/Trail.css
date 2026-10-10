@@ -1,0 +1,52 @@
+.page-title { font-size: 2rem; margin-bottom: 6px; }
+.sub { margin: 0 0 28px; color: var(--muted); }
+
+.error-box {
+  margin: 0 0 16px; padding: 10px 12px;
+  border-left: 4px solid var(--bad); background: #fbeceb; color: #8e2a20;
+}
+
+.progress { margin-bottom: 32px; }
+.progress-bar { height: 10px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.progress-bar span { display: block; height: 100%; background: var(--ok); }
+
+.section-title { font-size: 1.25rem; margin-bottom: 12px; }
+.next-list { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--line); }
+.next-list li {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.next-list p { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+.links { display: flex; gap: 12px; flex-wrap: wrap; }
+.linkbtn {
+  padding: 10px 16px; border-radius: 8px; font-weight: 600; text-decoration: none;
+  border: 1px solid var(--action); color: var(--action);
+}
+.linkbtn:hover { background: var(--action); color: #fff; }
+
+.trail-group { margin-bottom: 36px; }
+.trail-group h2 { font-size: 1.25rem; margin-bottom: 14px; }
+.trail { list-style: none; margin: 0; padding: 0; }
+.step { position: relative; display: flex; justify-content: space-between; gap: 16px; padding: 0 0 22px 34px; }
+.step::before { content: ""; position: absolute; left: 8px; top: 20px; bottom: -4px; width: 2px; background: var(--line); }
+.step:last-child::before { display: none; }
+.dot {
+  position: absolute; left: 0; top: 4px; width: 18px; height: 18px;
+  border-radius: 50%; border: 2px solid var(--action); background: var(--mist);
+}
+.step.done .dot { background: var(--ok); border-color: var(--ok); }
+.step.late .dot { border-color: var(--bad); }
+.step h3 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; }
+.step p { margin: 2px 0 0; color: var(--muted); font-size: 0.93rem; }
+.step-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+.step-side button {
+  height: 36px; padding: 0 14px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--action); background: transparent; color: var(--action); font-weight: 600;
+}
+.step-side button:hover { background: var(--action); color: #fff; }
+
+@media (max-width: 560px) {
+  .step { flex-direction: column; }
+  .step-side { flex-direction: row; align-items: center; }
+}

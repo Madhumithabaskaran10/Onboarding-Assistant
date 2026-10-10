@@ -1,0 +1,108 @@
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.back {
+  position: absolute;
+  top: 16px;
+  left: clamp(16px, 4vw, 32px);
+  z-index: 2;
+  color: var(--action);
+  font-weight: 600;
+  text-decoration: none;
+}
+.back:hover { text-decoration: underline; }
+
+.swing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 0;
+  animation: swing 1.8s ease-out 1;
+}
+
+.lanyard {
+  width: 30px;
+  height: 16vh;
+  min-height: 80px;
+  background: var(--lanyard);
+}
+
+.badge {
+  position: relative;
+  width: min(380px, calc(100vw - 32px));
+  background: var(--paper);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 22px 44px -20px rgba(20, 33, 61, 0.5);
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 56px;
+  height: 10px;
+  border-radius: 6px;
+  background: var(--mist);
+  transform: translateX(-50%);
+}
+
+.badge-top { background: var(--ink); padding: 38px 28px 20px; }
+.badge-brand { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: #fff; }
+
+.badge-body { display: flex; flex-direction: column; padding: 26px 28px 30px; }
+.badge-body h1 { font-size: 1.9rem; font-weight: 700; }
+.hint { margin: 8px 0 22px; color: var(--muted); font-size: 0.95rem; }
+
+.badge-body label { font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; }
+
+.badge-body input {
+  height: 44px;
+  padding: 0 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.error {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-left: 4px solid var(--bad);
+  background: #fbeceb;
+  color: #8e2a20;
+  font-size: 0.92rem;
+}
+
+.badge-body button {
+  height: 46px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--action);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.badge-body button:disabled { opacity: 0.65; cursor: wait; }
+
+.swap { margin: 18px 0 0; text-align: center; font-size: 0.92rem; }
+.swap a { color: var(--action); }
+
+@keyframes swing {
+  0%   { transform: rotate(7deg); }
+  25%  { transform: rotate(-4deg); }
+  50%  { transform: rotate(2.5deg); }
+  75%  { transform: rotate(-1deg); }
+  100% { transform: rotate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swing { animation: none; }
+}
